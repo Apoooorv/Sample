@@ -24,6 +24,7 @@ RUN pip install django
 RUN python /home/sample/manage.py migrate
 
 RUN chmod a+rxw /run/httpd/
+RUN chmod -R a+rxw /etc/httpd/logs/
 #RUN chmod -R a+rxw /var/logs/
 #RUN apachectl -k start
 #RUN chmod 777 /run/httpd/httpd.pid
