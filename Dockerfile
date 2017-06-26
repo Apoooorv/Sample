@@ -16,6 +16,10 @@ RUN python get-pip.py
 RUN pip install django
 RUN python /home/sample/manage.py migrate
 
+RUN chmod a+rxw /run/httpd/
+#RUN apachectl -k start
+#RUN chmod 777 /run/httpd/httpd.pid
+#RUN chown apache:apache /run/httpd/httpd.pid
 #RUN httpd -k restart
 #RUN cd /home/
 #RUN django-admin startproject sample
