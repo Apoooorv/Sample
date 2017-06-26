@@ -13,8 +13,8 @@ RUN curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
 RUN python get-pip.py
 
 RUN sed -i -e 's|^Listen 80$|Listen 8080|' \
-           -e 's|ErrorLog .*$|ErrorLog "/dev/stderr"|' \
-           -e 's|CustomLog .*$|CustomLog "/dev/stdout" combined|' \
+           #-e 's|ErrorLog .*$|ErrorLog "/dev/stderr"|' \
+           #-e 's|CustomLog .*$|CustomLog "/dev/stdout" combined|' \
            -e '/^#ServerName/a ServerName localhost' \
            -e '/^ServerRoot/a PidFile /var/tmp/httpd.pid' \
     /etc/httpd/conf/httpd.conf
